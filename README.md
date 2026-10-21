@@ -118,6 +118,4 @@ Never commit `.env` or expose your API key in frontend JavaScript. The key is re
 ## Credits
 
 Movie metadata and images are provided by [The Movie Database (TMDB)](https://www.themoviedb.org/). This project is an independent educational project and is not endorsed by TMDB.
-=======
-# CINEMATCH
->>>>>>> 0b6f2c3791ecc1e114bdb00aa0ddf2c820976902
+
