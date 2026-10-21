@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Discover movies and find your next favorite with content-based recommendations.">
+  <title>CineMatch — Movie Discovery</title>
+  <link rel="preconnect" href="https://image.tmdb.org">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CineMatch home"><span class="brand-mark">▶</span><span>CINE<span
+          class="brand-accent">MATCH</span></span></a>
+    <nav class="main-nav"><a class="nav-link active" href="#home" id="homeNav">Discover</a><a class="nav-link"
+        href="#trending" data-category="trending">Trending</a><a class="nav-link" href="#popular"
+        data-category="popular">Popular</a></nav>
+    <div class="top-actions"><span class="api-status" id="apiStatus"><i></i><span>Connecting</span>
+      </span>
+      <!-- <a class="github-link" href="https://github.com/simran21122/Movies-Recommendation-System" target="_blank" rel="noreferrer">GitHub ↗</a> -->
+    </div>
+  </header>
+  <main id="homeView">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT FAVORITE IS HERE</p>
+        <h1>Stories worth<br><span class="gradient-text">staying in for.</span></h1>
+        <p class="hero-description">Explore films, discover hidden gems, and find your next watch through smart movie
+          recommendations.</p>
+        <form id="searchForm" class="search-form"><span class="search-icon">⌕</span><input id="searchInput"
+            type="search" autocomplete="off" placeholder="Search a movie — try Interstellar..."
+            aria-label="Search movies"><button type="submit">Search <span>↗</span></button>
+          <div id="suggestions" class="suggestions hidden"></div>
+        </form>
+        <div class="hero-meta"><span><b class="meta-dot"></b> Powered by TMDB</span><span>✦ Content-based
+            recommendations</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-poster hero-poster-back"></div>
+        <div class="hero-poster hero-poster-mid"></div>
+        <div class="hero-poster hero-poster-front">
+          <div class="poster-glow"></div>
+          <div class="poster-label">THE NEXT<br>GREAT STORY</div>
+          <div class="poster-bottom">CINEMA / DISCOVERY</div>
+        </div>
+        <div class="floating-chip chip-top">✦ Curated for you</div>
+        <div class="floating-chip chip-bottom"><span>✧</span> Find your next obsession</div>
+      </div>
+    </section>
+    <section id="searchResultsSection" class="section hidden">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SEARCH RESULTS</p>
+          <h2>Matches for <span id="searchTerm"></span></h2>
+        </div><button class="text-button" id="clearSearch">Clear search ×</button>
+      </div>
+      <div id="searchResults" class="movie-grid"></div>
+    </section>
+    <section class="section feed-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WHAT'S IN THE SPOTLIGHT</p>
+          <h2 id="feedTitle">Trending <span class="heading-muted">right now</span></h2>
+        </div>
+        <div class="feed-controls"><label class="sr-only" for="categorySelect">Movie category</label><select
+            id="categorySelect">
+            <option value="trending">Trending</option>
+            <option value="popular">Popular</option>
+            <option value="top_rated">Top rated</option>
+            <option value="now_playing">Now playing</option>
+            <option value="upcoming">Upcoming</option>
+          </select><button class="arrow-button" id="refreshFeed" aria-label="Refresh movie feed">↻</button></div>
+      </div>
+      <div id="homeMovies" class="movie-grid">
+        <div class="loading-state">Loading the lineup<span class="loading-dots">•••</span></div>
+      </div>
+    </section>
+    <section class="feature-strip">
+      <div class="feature-icon">✳</div>
+      <div>
+        <p class="eyebrow">BEYOND THE BLOCKBUSTERS</p>
+        <h3>Find movies that feel like <span>your kind of story.</span></h3>
+        <p>Our recommendation engine combines TF-IDF similarity with genre discovery to help you explore what to watch
+          next.</p>
+      </div>
+      <div class="feature-stat"><strong>2<span>×</span></strong><small>ways to discover</small></div>
+    </section>
+    <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">▶</span><span>CINE<span
+            class="brand-accent">MATCH</span></span></a>
+      <p>Made for people who love a good story. Movie data provided by TMDB.</p><a href="https://www.themoviedb.org/"
+        target="_blank" rel="noreferrer" class="tmdb-note">About TMDB ↗</a>
+    </footer>
+  </main>
+  <main id="detailView" class="detail-view hidden"><button id="backButton" class="back-button">← <span>Back to
+        discovery</span></button>
+    <div id="detailContent">
+      <div class="loading-state">Loading movie details<span class="loading-dots">•••</span></div>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+
+</html>
