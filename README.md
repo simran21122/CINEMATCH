@@ -30,7 +30,7 @@ CINEMATCH/
 │   └── app.js
 ├── main.py
 ├── requirements.txt
-├── .env.example
+├── .env
 ├── .gitignore
 ├── df.pkl
 ├── indices.pkl
