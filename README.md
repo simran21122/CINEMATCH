@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CineMatch — Movie Recommendation System
 
 A movie discovery application rebuilt with a **HTML/CSS/JavaScript frontend** and a **FastAPI REST API backend**. It preserves the original project's movie feed, TMDB search and details, TF-IDF content-based recommendations, and genre-based recommendations.
@@ -24,7 +23,7 @@ A movie discovery application rebuilt with a **HTML/CSS/JavaScript frontend** an
 ## Project structure
 
 ```text
-Movies-Recommendation-System/
+CINEMATCH/
 ├── frontend/
 │   ├── index.html
 │   ├── styles.css
